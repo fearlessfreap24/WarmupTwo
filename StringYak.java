@@ -18,7 +18,31 @@ public class StringYak {
 
 	private void run() {
 		// TODO Auto-generated method stub
+		String[] strs = { "yakpak", "pakyak", "yak123ya" };
 		
+		for ( String str : strs ) {
+			System.out.printf("str = %s : %s\n", str, stringYak(str));
+		}
+	}
+
+	private String stringYak(String str) {
+		// TODO Auto-generated method stub
+		String stringyak = "";
+		
+		String[] strSplit = str.split("");
+		
+		for ( int i = 0; i < strSplit.length; i++ ) {
+			if ( i + 2 < strSplit.length) {
+				if (strSplit[i].equals("y") && strSplit[i+2].equals("k")) {
+					i += 2;
+				}
+				else stringyak = stringyak + strSplit[i];
+			}
+			else stringyak = stringyak + strSplit[i];
+				
+		}
+		
+		return stringyak;
 	}
 
 }
